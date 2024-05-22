@@ -2,8 +2,11 @@
 num1 = input(print("Ingresa un número"))
 num2 = input(print("Ingresa un segundo número"))
 
-sum = int(num1) + int(num2)
-print("Esta es una suma: " , sum)
+num1 = int(num1)
+num2 = int(num2)
+
+add = num1 + num2
+print("Esta es una suma: " , add)
 
 res = num1-num2
 print("Esta es una resta: " , res)
