@@ -1,2 +1,2 @@
 # 1.- Hola Mundo: escribir un programa que imprima “Hola Mundo” en la terminal/consola.
-print("HOla mundo!")
+print("Hola mundo!")
