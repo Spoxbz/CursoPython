@@ -1,48 +1,49 @@
 # 5.- Listado de tareas: escribe un programa que permita al usuario agregar, eliminar, y mostrar una lista de tareas pendientes.
 def main():
-  tareas = []  
+    tasks = []  
 
-  while True:
-    print("\nMenú de tareas pendientes:")
-    print("1. Mostrar lista")
-    print("2. Agregar tarea")
-    print("3. Eliminar tarea")
-    print("4. Salir")
+    while True:
+        print("\nMenú de tareas pendientes:")
+        print("1. Agregar tarea")
+        print("2. Mostrar tarea")
+        print("3. Eliminar tarea")
+        print("4. Salir")
 
-    opcion = input("Ingrese la opción deseada (1-4): ")
+        option = input("Escoja una opción a realizar (1-4): ")
 
-    if opcion == "1":
-      if not tareas:
-        print("La lista de tareas está vacía.")
-      else:
-        for indice, tarea in enumerate(tareas):
-          print(f"{indice + 1}. {tarea}")
+        if option == "1":
+            newTask = input("Ingrese una nueva tarea: ")
+            tasks.append(newTask)
+            print("La tarea se agregó correctamente.")
 
-    elif opcion == "2":
-      nueva_tarea = input("Ingrese la nueva tarea: ")
-      tareas.append(nueva_tarea)
-      print("Tarea agregada correctamente.")
+        elif option == "2":
+            if not tasks:
+                print("Su lista de tareas está vacía.")
+            else:
+                print("Lista total de tareas")
+                for index, task in enumerate (tasks):
+                    print(f"#{index} -> {task}")
 
-    elif opcion == "3":
-      if not tareas:
-        print("La lista de tareas está vacía.")
-      else:
-        for indice, tarea in enumerate(tareas):
-          print(f"{indice + 1}. {tarea}")
+        elif option == "3":
+            if not tasks:
+                print("Su lista de tareas está vacía.")
+            else:
+                for index, task in enumerate(tasks):
+                    print(f"{index + 1}. {task}")
 
-        indice_eliminar = int(input("Ingrese el número de la tarea a eliminar: ")) - 1
+                index_to_delete = int(input("Ingrese el número de tarea que quiera eliminar: ")) - 1
 
-        if 0 <= indice_eliminar < len(tareas):
-          del tareas[indice_eliminar]
-          print("Tarea eliminada correctamente.")
+                if 0 <= index_to_delete < len(tasks):
+                    del tasks[index_to_delete]
+                    print("Tarea eliminada.")
+                else:
+                    print("Número incorrecto o no existe.")
+
+        elif option == "4":
+            print("...Cerrando TodoList")
+            break
         else:
-          print("Número de tarea inválido.")
-
-    elif opcion == "4":
-      print("Saliendo del programa...")
-      break
-    else:
-      print("Opción inválida. Intenta de nuevo.")
+            print("Opción incorrecta. Intente de nuevo.")
 
 if __name__ == "__main__":
-  main()
+    main()
